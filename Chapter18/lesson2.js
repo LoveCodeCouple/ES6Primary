@@ -7,6 +7,7 @@ async function getMoviesFromApi() {
     return responseJson.movies;
   } catch (error) {
     console.error(error);
+    
   }
 }
 
