@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 async function getMoviesFromApi() {
   try {
     // 注意这里的await语句，其所在的函数必须有async关键字声明
@@ -12,7 +14,7 @@ async function getMoviesFromApi() {
 }
 
 getMoviesFromApi().then((value) => {
-  console.log(value);
+  console.log(`getMoviesFromApi --- ${JSON.stringify(value)}`);
 });
 
 //
@@ -42,4 +44,4 @@ async function getTitle(url) {
   const html = await response.text();
   return html.match(/<title>([\s\S]+)<\/title>/i)[1];
 }
-getTitle('https://tc39.github.io/ecma262/').then((v) => { console.log(v) })
+getTitle('https://tc39.github.io/ecma262/').then((v) => { console.log(`getTitlt --- ${v}`) })
